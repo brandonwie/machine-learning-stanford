@@ -96,7 +96,7 @@ for t = 1:m
   % calc delta 3(error 3)
   d_3 = a_3 - yVector;
   % error 2
-  d_2 = (Theta2' * d_3) .* [1; sigmoidGradient(z_2)]; % (hidden_layer_size + 1) x 1 == 26 x 1
+  d_2 = (Theta2' * d_3) .* sigmoidGradient([1; z_2]); % (hidden_layer_size + 1) x 1 == 26 x 1
   % remove delta_0
   d_2 = d_2(2:end);
 
