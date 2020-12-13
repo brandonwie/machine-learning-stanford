@@ -34,11 +34,11 @@ for C = C_val
     % copied from ex6.m
     model = svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
     err = mean(double(svmPredict(model, Xval) ~= yval));
-    if( err <= error_min )
+    if(err <= error_min)
       C_min = C;
       sigma_min = sigma;
       error_min = err;
-      fprintf('new min C = %f, new min sigma = %f, error = %f', C_min, sigma_min, error_min);
+      fprintf('Found new min Error\nC = %f\nsigma = %f\nerror = %f', C_min, sigma_min, error_min);
     end
   end
 end

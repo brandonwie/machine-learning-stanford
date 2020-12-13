@@ -16,8 +16,9 @@ sim = 0;
 %
 %
 
-distance = sum((x1-x2).^2);
-sim = e^(-distance/(2*sigma^2));
+% Usually need to do perform scaling before using the Gaussian kernel
+sq_dist = sum((x1-x2).^2);
+sim = exp(-(sq_dist/(2*sigma^2)));
 
 % =============================================================
 
