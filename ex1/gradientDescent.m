@@ -16,8 +16,8 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCost) and gradient here.
 
-    error = (X*theta) - y; % 97x2 * 2x1 => 97x1
-    theta = theta - ((alpha*(1/m))*X'*error); % X' = 2x97, error = 97x1 => 2x1
+    err = (X*theta) - y; % 97x2 * 2x1 => 97x1
+    theta = theta - ((alpha*(1/m))*X'*err); % X' = 2x97, error = 97x1 => 2x1
 
     % ============================================================
 

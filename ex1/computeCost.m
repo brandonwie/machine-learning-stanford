@@ -13,10 +13,9 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-hypothesis = X*theta; % (m*2)*(2*1) = m*1 (가설함수 h(x)값)
-sqrErrors = (hypothesis - y).^2; % 인구 수*계수(theta) (가설함수h(x))에서 실제 profit을 빼준 값
-
-J = 1/(2*m) * sum(sqrErrors); % mean squared errors
+h = X*theta; % (m*2)*(2*1) = m*1 (가설함수 h(x)값)
+errSqr = (h - y).^2; % 인구 수*계수(theta) (가설함수h(x))에서 실제 profit을 빼준 값
+J = 1/(2*m) * sum(errSqr); % mean squared errors
 
 % =========================================================================
 

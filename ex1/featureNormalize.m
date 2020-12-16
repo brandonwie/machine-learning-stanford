@@ -7,8 +7,8 @@ function [X_norm, mu, sigma] = featureNormalize(X)
 
 % You need to set these values correctly
 X_norm = X;
-mu = zeros(1, size(X, 2)); % 평균값
-sigma = zeros(1, size(X, 2)); % 1 * X column size
+mu = zeros(1, length(X)); % 평균값
+sigma = zeros(1, length(X)); % 1 * X column size
 
 % ====================== YOUR CODE HERE ======================
 % Instructions: First, for each feature dimension, compute the mean
@@ -24,11 +24,10 @@ sigma = zeros(1, size(X, 2)); % 1 * X column size
 %               each feature.
 %
 % Hint: You might find the 'mean' and 'std' functions useful.
-%
 
-mu = mean(X)
-sigma = std(X)
-X_norm = (X - mu)./sigma
+mu = mean(X); % scalar
+sigma = std(X); % scalar
+X_norm = (X - mu)./sigma;
 
 % ============================================================
 
