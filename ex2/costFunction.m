@@ -25,7 +25,7 @@ grad = zeros(size(theta)); % grad의 사이즈는 (n+1) x 1
 % 따라서 변환없이 곱 가능 : 출력값 m x 1
 h = sigmoid(X*theta);
 
-J = (1/m)*((-y)'*log(h)-(1-y)'*log(1-h));
+J = -(1/m)*(y'*log(h)+(1-y)'*log(1-h));
 
 grad = (1/m)*X'*(h-y);
 % y는 m x 1 행렬

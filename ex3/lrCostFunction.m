@@ -40,10 +40,10 @@ grad = zeros(size(theta));
 h = sigmoid(X * theta);
 % theta_0의 값은 0으로 설정 / 왜 ex3.m의 theta^4x1 (1,1) 값이 -2로 설정되었는지 모르겠음
 theta(1,1) = 0;
-J = (1/m) * ((-y)' * log(h) - (1-y)' * log(1-h)) + (lambda/(2*m)) * (theta' * theta);
-grad = (1/m) * X' * (h-y) + (lambda/m) * theta;
+J = -(1/m) * (y'*log(h) + (1-y)'*log(1-h)) + (lambda/(2*m))*(theta'*theta);
+grad = (1/m)*X'*(h-y) + (lambda/m)*theta;
 % 1.3.3 : j = 0 일때, grad(1,1)의 식은 lamba를 포함하지 않는다.
-grad(1,1) = (1/m) * X'(1,:) * (h-y);
+grad(1,1) = (1/m)*X'(1,:)* (h-y);
 
 % =============================================================
 % vector  mx1 로 만든다.

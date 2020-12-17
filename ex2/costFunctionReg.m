@@ -22,7 +22,7 @@ h = sigmoid(X*theta);
 % set theta1 as 0
 theta(1,1) = 0;
 % cost function
-J = (1/m) * ((-y)' * log(h) - (1-y)' * (log(1-h))) + ((lambda/(2*m)) * (theta' * theta));
+J = -(1/m) * (y'*log(h) + (1-y)'*log(1-h)) + (lambda/(2*m)) * (theta'*theta);
 % calc general case first
 grad = (1/m) * X' * (h-y) + (lambda/m) * theta;
 % overwrite j=0 case separately
